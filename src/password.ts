@@ -2,7 +2,7 @@ import { stdin, stdout } from "node:process";
 
 // Acquire password from env, CLI option, or interactive prompt.
 export async function acquirePassword(optionPassword?: string): Promise<string> {
-    const envPassword = process.env.PROTECT_BUNDLE_PASSWORD;
+    const envPassword = process.env.FRONTCRYPT_PASSWORD;
     if (envPassword && envPassword.length > 0) {
         return envPassword;
     }

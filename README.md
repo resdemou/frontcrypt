@@ -42,7 +42,7 @@ Options:
 
 Password precedence:
 
-1. `PROTECT_BUNDLE_PASSWORD` environment variable
+1. `FRONTCRYPT_PASSWORD` environment variable
 2. `--password` CLI flag
 3. Interactive masked prompt (TTY required)
 
@@ -63,7 +63,7 @@ bun run index.ts ./dist -o ./dist-protected
 CI-friendly environment variable:
 
 ```bash
-export PROTECT_BUNDLE_PASSWORD="super-secret-string"
+export FRONTCRYPT_PASSWORD="super-secret-string"
 bun run index.ts ./dist
 ```
 
