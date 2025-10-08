@@ -24,15 +24,15 @@ export function buildLoaderHtml(values: LoaderTemplateValues): string {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: radial-gradient(circle at top, rgba(79, 70, 229, 0.15), transparent 60%);
+            background-color: #ffffff;
+            color: #0f172a;
         }
         main {
             width: min(380px, 90vw);
             padding: 32px;
-            border-radius: 24px;
-            background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18);
+            border-radius: 16px;
+            background-color: #ffffff;
+            border: 1px solid rgba(148, 163, 184, 0.4);
         }
         h1 {
             margin: 0 0 16px;
@@ -53,6 +53,8 @@ export function buildLoaderHtml(values: LoaderTemplateValues): string {
             border-radius: 12px;
             border: 1px solid rgba(148, 163, 184, 0.6);
             font-size: 1rem;
+            background-color: transparent;
+            color: inherit;
         }
         button {
             padding: 12px;
@@ -60,16 +62,22 @@ export function buildLoaderHtml(values: LoaderTemplateValues): string {
             border-radius: 12px;
             font-size: 1rem;
             font-weight: 600;
-            color: white;
-            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: #ffffff;
+            background-color: #000000;
             cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
         }
         button:disabled {
             cursor: progress;
             opacity: 0.7;
         }
+        button:not(:disabled):hover {
+            background-color: #1f2933;
+        }
+        button:not(:disabled):active {
+            transform: translateY(0);
+        }
         #status {
-            min-height: 1.2rem;
             font-size: 0.9rem;
         }
         .error {
@@ -86,7 +94,7 @@ export function buildLoaderHtml(values: LoaderTemplateValues): string {
                 <input id="password" name="password" type="password" required autocomplete="off" autofocus>
             </label>
             <button type="submit">Unlock</button>
-            <p id="status" role="status" aria-live="polite"></p>
+            <span id="status" role="status" aria-live="polite"></span>
         </form>
     </main>
     <script>
