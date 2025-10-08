@@ -1,0 +1,17 @@
+{
+  "name": "frontcrypt",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^24.7.0",
+    "@types/tar-stream": "^3.1.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "tar-stream": "^3.1.7"
+  }
+}
